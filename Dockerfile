@@ -1,4 +1,6 @@
-FROM node:16.13.0
+FROM alpine:3.13
+
+ENV NODE_VERSION 16.13.0
 
 RUN mkdir -p /app/src
 
