@@ -1,4 +1,4 @@
-FROM node:16.13.0-alpline3.12
+FROM node:16-alpline3.12
 
 RUN mkdir -p /app/src
 
