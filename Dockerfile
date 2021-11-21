@@ -1,12 +1,10 @@
-FROM node:latest
+FROM node:16.13.0
 
 RUN mkdir -p /app/src
 
 WORKDIR /app/src
 
 COPY package.json .
-
-RUN npm install -g npm@latest
 
 RUN npm install
 
