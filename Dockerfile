@@ -6,7 +6,9 @@ WORKDIR /app/src
 
 COPY package.json .
 
-RUN npm install --force
+RUN npm install -g npm@latest
+
+RUN npm install
 
 COPY . .
 
