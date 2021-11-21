@@ -1,0 +1,9 @@
+thead {
+    color: #337AB7;
+}
+
+a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+    cursor: pointer;
+}
