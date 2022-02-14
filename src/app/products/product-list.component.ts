@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductService } from './product.service';
 import { IProduct } from './products';
@@ -7,7 +7,7 @@ import { IProduct } from './products';
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit, OnDestroy {
     pageTitle: string = 'Product List';
     imageWidth: number = 50;
     imageMargin: number = 2;
