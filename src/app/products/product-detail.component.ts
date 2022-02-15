@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ProductService } from './product.service';
@@ -8,7 +8,7 @@ import { IProduct } from './products';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit, OnDestroy {
 
   pageTitle: string = 'Product Detail'
   product: IProduct | undefined
@@ -16,7 +16,11 @@ export class ProductDetailComponent implements OnInit {
   errorMessage: string = ''
   prod = {}
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productService: ProductService,
+    ) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
